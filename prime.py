@@ -4,7 +4,15 @@ def check_prime(n):
     if (n <= 1) or (n != int(n)):
         return False
     
-    for i in range(2, int(sqrt(n)) + 1):
+    if n == 2:
+        return True
+    
+    if n % 2 == 0 and n > 2:
+        return False
+
+    k = int(sqrt(n))
+
+    for i in range(3, k + 1, 2):
         if n % i == 0:
             return False
         
